@@ -54,7 +54,7 @@ namespace ConsoleApplicationLabo1
             int cptActivities = ListActivities.Count();
             if (cptActivities == 0)
             {
-                ch += "n'a pas encore choisi d'activité";
+                ch += " n'a pas encore choisi d'activité";
             }
             else
             {
