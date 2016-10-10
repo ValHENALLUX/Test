@@ -18,9 +18,42 @@ namespace ConsoleApplicationLabo1
             Activity a4 = new Activity("test4", true);
             Activity a5 = new Activity("test5", false);
 
-            System.Console.Write(p1);
+            p1.AddActivity(a1);
+            p1.AddActivity(a4);
+
+            //System.Console.Write(p1);
+
+            Pupil pupilActComp = p1;
+
+            /*Step3
+            System.Console.Write(pupilActComp.PrintPupilActivityCompulsory(
+                delegate (Activity activity)
+                {
+                    return activity.Title + "\n";
+                }));
+            */
+
+            /*Step4.2
+            System.Console.WriteLine(pupilActComp.PrintPupilActivityCompulsory(StaticPrintActivity));
+            */
+
+            /*Step5
+            PrintActivityDelegate p = new PrintActivityDelegate();
+
+            System.Console.WriteLine(pupilActComp.PrintPupilActivityCompulsory(p.PrintActivity));
+            */
+
+            /*Step6
+            System.Console.WriteLine(pupilActComp.PrintPupilActivityCompulsory(activity => activity.Title + Environment.NewLine));
+            */
 
             System.Console.Read();
         }
+        /*Step4.1
+        private static string StaticPrintActivity(Activity activity)
+        {
+            return activity.Title + "\n";
+        }
+        */
     }
 }

@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplicationLabo1
 {
-    class Pupil : Person
+    public class Pupil : Person
     {
         public int Grade { get; set; }
-
         private List<Activity> listActivities;
-
         private char [] tabEval;
+        public delegate string DelegatePrintActivityCompulsory(Activity activity);
 
         public char [] TabEval
         {
@@ -64,6 +63,19 @@ namespace ConsoleApplicationLabo1
                     ch += activity + "\n";
                 }
             }
+            return ch;
+        }
+
+        public string PrintPupilActivityCompulsory(DelegatePrintActivityCompulsory MyPrintActivity)
+        {
+            int numAct = 0;
+            string ch = base.ToString() + " a choisi les activités obligatoires : \n";
+
+            foreach (Activity activity in ListActivities)
+            {
+                ch += (++numAct) + " " + MyPrintActivity(activity);
+            }
+
             return ch;
         }
     }
